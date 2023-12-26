@@ -4,6 +4,7 @@ CElipse::CElipse(Point P1, Point p2, GfxInfo FigureGfxInfo):CFigure(FigureGfxInf
 {
 	P1 = P1;
 	P2 = p2;
+	ID = newID++;
 }
 
 
@@ -39,7 +40,6 @@ bool CElipse::insideFigure(int x, int y)
 
 
 string CElipse::GetFigureInfo()
-
 {
 	string DrawColor = pManager->getColorName(FigGfxInfo.DrawClr);
 	string shapeInfo = "ID: " + to_string(ID) + " || Shape: Ellipse || First Point: (" + to_string(P1.x) + ", " + to_string(P1.y) + ")" + " || Second Point: (" + to_string(P2.x) + ", " + to_string(P2.y) + ")" + " || Draw Color: " + DrawColor;

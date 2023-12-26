@@ -240,31 +240,31 @@ void GUI::DrawSquare(Point P1, int length, GfxInfo RectGfxInfo, bool selected) c
 
 	
 	pWind->DrawRectangle(P1.x, P1.y, P1.x +length, P1.y+length, style);
-	pWind->DrawLine(P1.x, P1.y, P1.x + length, P1.y + length, style);
+	//pWind->DrawLine(P1.x, P1.y, P1.x + length, P1.y + length, style);
 
 }
-void GUI::DrawEllipse(Point first, Point second, GfxInfo ELPSGfxInfo, bool selected ) const
+void GUI::DrawEllipse(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) const
 {
 	color DrawingClr;
 	if (selected)
 		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
 	else
-		DrawingClr = ELPSGfxInfo.DrawClr;
+		DrawingClr = RectGfxInfo.DrawClr;
 
-	pWind->SetPen(DrawingClr, ELPSGfxInfo.BorderWdth);	//Set Drawing color & width
+	pWind->SetPen(DrawingClr, RectGfxInfo.BorderWdth);	//Set Drawing color & width
 
 	drawstyle style;
-	if (ELPSGfxInfo.isFilled)
+	if (RectGfxInfo.isFilled)
 	{
 		style = FILLED;
-		pWind->SetBrush(ELPSGfxInfo.FillClr);
+		pWind->SetBrush(RectGfxInfo.FillClr);
 	}
 	else
 		style = FRAME;
 
 
-	pWind->DrawEllipse(first.x, first.y, second.x , second.y, style);
-	
+	pWind->DrawEllipse(P1.x, P1.y, P2.x, P2.y, style);
+
 
 }
 void GUI::DrawHexagon(Point P1, Point P2, GfxInfo HexGfxInfo, bool selected) const

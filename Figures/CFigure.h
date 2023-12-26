@@ -3,7 +3,7 @@
 
 #include "..\defs.h"
 #include "..\GUI\GUI.h"
-
+static int newID = 0;
 //Base class for all figures
 class CFigure
 {

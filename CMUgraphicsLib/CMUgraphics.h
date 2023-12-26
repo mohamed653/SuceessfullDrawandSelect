@@ -270,7 +270,7 @@ class window {
 
     // Draws an ellipse inside the rectangle bounded by (iX1, iY1) and (iX2, iY2)
     // Valid drawstyles are FRAME, FILLED, and INVERTED
-	void DrawEllipse(const int iX1, const int iY1, const int iX2, const int iY2, const drawstyle dsStyle = FILLED); 
+    void DrawEllipse(const int iX1, const int iY1, const int iX2, const int iY2, const drawstyle dsStyle = FILLED);
 
     // Draws a section of and ellipse inside the rectangle bounded by (iX1, iY1) and (iX2, iY2), from
     // dStartAngle to dEndAngle.  atInfo may be set to RADIANS for those who perfer to use that system
