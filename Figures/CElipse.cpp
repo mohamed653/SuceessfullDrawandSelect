@@ -1,8 +1,8 @@
 #include "CElipse.h"
 
-CElipse::CElipse(Point P1, Point p2, GfxInfo FigureGfxInfo):CFigure(FigureGfxInfo)
+CElipse::CElipse(Point p1, Point p2, GfxInfo FigureGfxInfo):CFigure(FigureGfxInfo)
 {
-	P1 = P1;
+	P1 = p1;
 	P2 = p2;
 	ID = newID++;
 }
