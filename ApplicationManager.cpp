@@ -9,14 +9,8 @@
 ApplicationManager::ApplicationManager()
 {
 	//Create Input and output
+	pGUI = new GUI;
 	
-	if (pGUI != NULL) {
-		GUI* pGUI = new GUI;
-	}
-	else {
-		
-		pGUI = new GUI;
-	}
 
 	FigCount = 0;
 

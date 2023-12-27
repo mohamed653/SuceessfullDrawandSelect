@@ -31,5 +31,7 @@ void ActionSelect::Execute()
 			pManager->RemoveSelectedFigure(pFig); // to remove the unselected from SelectedFigures array
 		}
 	}
+	// ELSE  when the user clickes on empty
+
 }
 
