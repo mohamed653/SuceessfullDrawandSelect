@@ -3,7 +3,10 @@
 #include "Actions\ActionAddElipse.h"
 #include "Actions/ActionAddHexa.h"
 #include "Actions/ActionSelect.h"
-
+#include "Actions\ActionChangeDrawColor.h"
+#include "Actions\ActionChangeFillColor.h"
+#include <string.h>
+#include <iostream>
 
 //Constructor
 ApplicationManager::ApplicationManager()
@@ -69,10 +72,20 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 			newAct = new ActionAddHexa(this);
 			break;
 
+	
 		case SELECT:
 			newAct = new ActionSelect(this);
 
 			break;
+
+		case CHNG_DRAW_CLR:
+			newAct = new ActionChangeDrawColor(this);
+			break;
+
+		case CHNG_FILL_CLR:
+			newAct = new ActionChangeFillColor(this);
+			break;
+
 		case EXIT:
 			///create ExitAction here
 			
@@ -99,6 +112,8 @@ void ApplicationManager::ExecuteAction(Action* &pAct)
 //==================================================================================//
 //						Figures Management Functions								//
 //==================================================================================//
+
+
 
 //Add a figure to the list of figures
 void ApplicationManager::AddFigure(CFigure* pFig)
@@ -215,4 +230,97 @@ string ApplicationManager::getColorName(color c)
 	if ((c.ucBlue == GREEN.ucBlue) && (c.ucGreen == GREEN.ucGreen) && (c.ucRed == GREEN.ucRed))
 		return "GREEN";
 	return "NO-FILL";
+}
+
+//==================================================================================//
+//						Colors Functions		     		                        //
+//==================================================================================//
+
+
+bool ApplicationManager::GetColor(color& inputColor)
+{
+
+	bool isColor = true;
+
+	ActionType inputColorAction = pGUI->MapInputToActionType();
+	cout << inputColorAction << endl;
+	switch (inputColorAction) {
+
+	case SET_RED:
+		inputColor = RED;
+		break;
+
+	case SET_GREEN:
+		inputColor = GREEN;
+		break;
+
+	case SET_BLUE:
+		inputColor = BLUE;
+		break;
+
+	case SET_PINK:
+		inputColor = PINK;
+		break;
+
+	case SET_MAROON:
+		inputColor = MAROON;
+		break;
+
+	case SET_PURPLE:
+		inputColor = PURPLE;
+		break;
+	case SET_BLACK:
+		inputColor = BLACK;
+		break;
+	case SET_WHITE:
+		inputColor = WHITE;
+		break;
+	case SET_ORANGE:
+		inputColor = ORANGE;
+		break;
+	case SET_LIGHT_BLUE:
+		inputColor = LIGHTBLUE;
+		break;
+	case SET_YELLOW:
+		inputColor = YELLOW;
+		break;
+	default:
+		isColor = false;
+	}
+
+	return isColor;
+}
+
+
+bool ApplicationManager::AnySelected()
+{
+	for (int i = 0; i < FigCount; i++)
+	{
+		if (FigList[i]->IsSelected())
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+void ApplicationManager::changeDrawColor(color drawClr)
+{
+	for (int i = 0; i < FigCount; i++)
+	{
+		if (FigList[i]->IsSelected())
+		{
+			FigList[i]->ChngDrawClr(drawClr);
+		}
+	}
+}
+void ApplicationManager::changeFillColor(color FillClr)
+{
+	for (int i = 0; i < FigCount; i++)
+	{
+		if (FigList[i]->IsSelected())
+		{
+			FigList[i]->ChngFillClr(FillClr);
+		}
+	}
 }

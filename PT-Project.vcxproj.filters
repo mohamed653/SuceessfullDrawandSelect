@@ -147,6 +147,8 @@
     <ClCompile Include="Figures\HEXA.cpp" />
     <ClCompile Include="Actions\ActionAddHexa.cpp" />
     <ClCompile Include="Actions\ActionSelect.cpp" />
+    <ClCompile Include="Actions\ActionChangeDrawColor.cpp" />
+    <ClCompile Include="Actions\ActionChangeFillColor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -236,5 +238,7 @@
     <ClInclude Include="Figures\HEXA.h" />
     <ClInclude Include="Actions\ActionAddHexa.h" />
     <ClInclude Include="Actions\ActionSelect.h" />
+    <ClInclude Include="Actions\ActionChangeDrawColor.h" />
+    <ClInclude Include="Actions\ActionChangeFillColor.h" />
   </ItemGroup>
 </Project>

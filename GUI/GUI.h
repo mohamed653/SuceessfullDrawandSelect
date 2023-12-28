@@ -28,7 +28,7 @@ public:
 	void CreateDrawToolBar() const;	//creates Draw mode toolbar & menu
 	void CreatePlayToolBar() const;	//creates Play mode toolbar & menu
 	void CreateStatusBar() const;	//create the status bar
-
+	void CreateColorBar() const; //create Color Bar
 	void ClearStatusBar() const;	//Clears the status bar
 	void ClearDrawArea() const;	//Clears the drawing area
 	
@@ -48,8 +48,13 @@ public:
 	
 	void PrintMessage(string msg) const;	//Print a message on Status bar
 
+
 	color getCrntDrawColor() const;	//get current drwawing color
 	color getCrntFillColor() const;	//get current filling color
+	void GUI::setCrntDrawColor(color c);
+	void GUI::setCrntFillColor(color c);//fill color
+	void GUI::setIsFilled(bool isF);//fill status
+
 	int getCrntPenWidth() const;		//get current pen width
 
 

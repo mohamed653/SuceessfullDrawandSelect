@@ -10,7 +10,9 @@
 enum GUI_MODE	//Graphical user interface mode
 {
 	MODE_DRAW,	//Drawing mode (startup mode)
-	MODE_PLAY	//Playing mode
+	MODE_PLAY,	//Play mody
+	MODE_COLOR,	//Color Mode 
+	MODE_SIZE // Resize Mode
 };
 
 enum DrawMenuItem //The items of the Draw menu (you should add more items)
@@ -21,6 +23,8 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	ITM_ELPS,		//Ellipse item in menu
 	ITM_HEXA,
 	ITM_SELECT,
+	ITM_CHNG_DRAW_COLOR,		// DR Color item in menu
+	ITM_FILL_COLOR,
 	//TODO: Add more items names here
 
 	ITM_EXIT,		//Exit item
@@ -38,6 +42,21 @@ enum PlayMenuItem //The items of the Play menu (you should add more items)
 
 	PLAY_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
 	
+};
+enum ColorMenuItem //The items of the Color menu (you should add more items)
+{ ITM_RED,     //Red color item in menu
+	ITM_GREEN,		//Green color item in menu
+	ITM_BLUE,		//Blue color item in menu
+	ITM_PINK,		//Pink color item in menu
+	ITM_MAROON,		//Maroon color item in menu
+	ITM_PURPLE,		//Purple color item in menu
+	ITM_BLACK,		//Black color item in menu
+	ITM_WHITE,		//Gray color item in menu
+	ITM_ORANGE,		//NAVY color item in menu
+	ITM_LIGHT_BLUE,	//lightBlue color item in menu
+	ITM_YELLOW,		//Yellow color item in menu
+	COLOR_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
+
 };
 
 
@@ -63,6 +82,7 @@ struct UI_Info	//User Interface Info.
 	color MsgColor;			//Messages color
 	color BkGrndColor;		//Background color
 	color StatusBarColor;	//Status bar color
+	color ColorBarColor;   // color bar color
 	int PenWidth;			//width of the pen that draws shapes
 
 	/// Add more members if needed

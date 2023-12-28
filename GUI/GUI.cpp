@@ -1,5 +1,6 @@
 #include "GUI.h"
 #include "../Figures/CElipse.h"
+#include <iostream>
 
 //constructor make necessary initializations
 GUI::GUI()
@@ -33,6 +34,7 @@ GUI::GUI()
 	
 	CreateDrawToolBar();
 	CreateStatusBar();
+	CreateColorBar();
 	
 }
 
@@ -89,6 +91,8 @@ ActionType GUI::MapInputToActionType() const
 			case ITM_ELPS: return DRAW_ELPS;
 			case ITM_HEXA: return DRAW_HEX;
 			case ITM_SELECT: return SELECT;
+			case ITM_CHNG_DRAW_COLOR: return CHNG_DRAW_CLR;
+			case ITM_FILL_COLOR: return CHNG_FILL_CLR;
 			case ITM_EXIT: return EXIT;	
 			
 			default: return EMPTY;	//A click on empty place in desgin toolbar
@@ -101,6 +105,40 @@ ActionType GUI::MapInputToActionType() const
 			return DRAWING_AREA;	
 		}
 		
+		//[3] User clicks on the status bar
+		return STATUS;
+	}
+	else if (UI.InterfaceMode == MODE_COLOR)
+	{
+
+		if (x >= 0 && x < UI.MenuItemWidth && y>UI.ToolBarHeight)
+		{
+			//Check whick Color was clicked
+			//==> This assumes that Color images are lined up Vertically <==
+			int ClickedItemOrder = (y / 50);
+			cout << ClickedItemOrder << "color mode" << endl;
+			switch (ClickedItemOrder)
+			{
+			case ITM_GREEN: return SET_GREEN;
+			case ITM_BLUE: return SET_BLUE;
+			case ITM_PINK: return SET_PINK;
+			case ITM_MAROON: return SET_MAROON;
+			case ITM_PURPLE: return SET_PURPLE;
+			case ITM_BLACK: return SET_BLACK;
+			case ITM_WHITE: return SET_WHITE;
+			case ITM_ORANGE: return SET_ORANGE;
+			case ITM_LIGHT_BLUE: return SET_LIGHT_BLUE;
+			case ITM_YELLOW: return SET_YELLOW;
+			case ITM_RED: return SET_RED;
+			default: return EMPTY;
+			}
+		}
+		//[2] User clicks on the drawing area
+		if (y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
+		{
+			return DRAWING_AREA;
+		}
+
 		//[3] User clicks on the status bar
 		return STATUS;
 	}
@@ -131,7 +169,33 @@ void GUI::CreateStatusBar() const
 	pWind->SetPen(UI.StatusBarColor, 1);
 	pWind->SetBrush(UI.StatusBarColor);
 	pWind->DrawRectangle(0, UI.height - UI.StatusBarHeight, UI.width, UI.height);
+}//////////////////////////////////////////////////////////////////////////////////////////
+void GUI::CreateColorBar() const
+{
+	pWind->SetPen(BLACK, 2);
+	pWind->SetBrush(UI.ColorBarColor);
+	pWind->DrawLine(UI.MenuItemWidth + 2, UI.ToolBarHeight, UI.MenuItemWidth + 2, UI.height - UI.StatusBarHeight);
+	string MenuItemImages[COLOR_ITM_COUNT];
+	MenuItemImages[ITM_RED] = "images\\MenuItems\\Green.jpg";
+	MenuItemImages[ITM_GREEN] = "images\\MenuItems\\Blue.jpg";
+	MenuItemImages[ITM_BLUE] = "images\\MenuItems\\Pink.jpg";
+	MenuItemImages[ITM_PINK] = "images\\MenuItems\\Nbiti.jpg";
+	MenuItemImages[ITM_MAROON] = "images\\MenuItems\\Light_blue.jpg";
+	MenuItemImages[ITM_PURPLE] = "images\\MenuItems\\Black.jpg";
+	MenuItemImages[ITM_BLACK] = "images\\MenuItems\\White.jpg";
+	MenuItemImages[ITM_WHITE] = "images\\MenuItems\\Orange.jpg";
+	MenuItemImages[ITM_ORANGE] = "images\\MenuItems\\Light_Blue.jpg";
+	MenuItemImages[ITM_LIGHT_BLUE] = "images\\MenuItems\\Yellow.jpg";
+	MenuItemImages[ITM_YELLOW] = "images\\MenuItems\\Red.jpg";
+	//Drawing Color image
+
+	//Draw color item one image at a time
+	for (int i = 0; i < COLOR_ITM_COUNT; i++)
+		pWind->DrawImage(MenuItemImages[i], 0, (i * 50) + (UI.ToolBarHeight + 7), UI.MenuItemWidth, 50);
+
 }
+
+
 //////////////////////////////////////////////////////////////////////////////////////////
 void GUI::ClearStatusBar() const
 {
@@ -156,6 +220,8 @@ void GUI::CreateDrawToolBar() const
 	MenuItemImages[ITM_ELPS] = "images\\MenuItems\\Menu_Elps.jpg";
 	MenuItemImages[ITM_HEXA] = "images\\MenuItems\\Menu_hexa.jpg";
 	MenuItemImages[ITM_SELECT] = "images\\MenuItems\\Menu_Select.jpg";
+	MenuItemImages[ITM_CHNG_DRAW_COLOR] = "images\\MenuItems\\DrawColorIcon.jpg";
+	MenuItemImages[ITM_FILL_COLOR] = "images\\MenuItems\\FillColor.jpg";
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
 
@@ -212,9 +278,21 @@ int GUI::getCrntPenWidth() const		//get current pen width
 {	return UI.PenWidth;	}
 
 
-bool GUI::getIsFilled() const {
+bool GUI::getIsFilled() const { //current filled
 	return UI.isFilled;
 }
+void GUI::setCrntDrawColor(color c) {  //set draw color
+	UI.DrawColor = c;
+}
+
+void GUI::setCrntFillColor(color c) {  //set fill color
+	UI.FillColor = c;
+}
+
+void GUI::setIsFilled(bool isF) { //set fill color
+	UI.isFilled = isF;
+}
+
 //======================================================================================//
 //								Figures Drawing Functions								//
 //======================================================================================//

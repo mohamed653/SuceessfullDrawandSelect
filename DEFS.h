@@ -26,6 +26,20 @@ enum ActionType //The actions supported (you can add more if needed)
 	STATUS,			//A click on the status bar
 	EMPTY,			//A click on empty place in the toolbar
 
+	SET_RED,		//pick red color
+	SET_GREEN,		//pick green color
+	SET_BLUE,		//pick blue color
+	SET_PINK,		//pick pink color
+	SET_MAROON,		//pick maroon color
+	SET_PURPLE,		//pick purple color
+	SET_BLACK,		// Pick Black color
+	SET_WHITE,		//Pick Gray color
+	SET_ORANGE,		//Pick navy color
+	SET_LIGHT_BLUE,	//Pick LightBlue Color
+	SET_YELLOW,
+
+
+
 	TO_DRAW,		//Switch interface to Draw mode
 	TO_PLAY			//Switch interface to Play mode
 

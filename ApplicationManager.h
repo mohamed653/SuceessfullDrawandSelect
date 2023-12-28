@@ -46,6 +46,15 @@ public:
 	CFigure *GetFigure(int x, int y) const; //Search for a figure given a point inside the figure
 
 		
+
+
+	//Colors Functions 
+	bool ApplicationManager::GetColor(color& inputColor);
+	void ApplicationManager::changeFillColor(color FillClr);
+	bool ApplicationManager::AnySelected();
+	void ApplicationManager::changeDrawColor(color drawClr);
+
+
 	// Select Figure Functions
 	CFigure* const* ApplicationManager::GetSelectedFigures() const;
 	int ApplicationManager::GetSelectedCount() const;
