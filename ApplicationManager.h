@@ -54,6 +54,10 @@ public:
 	bool ApplicationManager::AnySelected();
 	void ApplicationManager::changeDrawColor(color drawClr);
 
+	// Bring back and forward functions
+	int GetSelectedFigureIndex();
+	//void BringToFront(int);
+	//void SendToBack(int);
 
 	// Select Figure Functions
 	CFigure* const* ApplicationManager::GetSelectedFigures() const;
@@ -65,6 +69,10 @@ public:
 	string getColorName(color c);
 	//void UnselectAll();
 	
+	//Delete Functions 
+	void ApplicationManager::RemoveFig(int ID);
+	void ApplicationManager::ClearSelectedFigs();
+
 
 	// -- Interface Management Functions	
 	GUI *GetGUI() const; //Return pointer to the interface

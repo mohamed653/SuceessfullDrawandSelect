@@ -91,6 +91,7 @@ ActionType GUI::MapInputToActionType() const
 			case ITM_ELPS: return DRAW_ELPS;
 			case ITM_HEXA: return DRAW_HEX;
 			case ITM_SELECT: return SELECT;
+			case ITM_DELETE: return Delete;
 			case ITM_CHNG_DRAW_COLOR: return CHNG_DRAW_CLR;
 			case ITM_FILL_COLOR: return CHNG_FILL_CLR;
 			case ITM_EXIT: return EXIT;	
@@ -220,6 +221,7 @@ void GUI::CreateDrawToolBar() const
 	MenuItemImages[ITM_ELPS] = "images\\MenuItems\\Menu_Elps.jpg";
 	MenuItemImages[ITM_HEXA] = "images\\MenuItems\\Menu_hexa.jpg";
 	MenuItemImages[ITM_SELECT] = "images\\MenuItems\\Menu_Select.jpg";
+	MenuItemImages[ITM_DELETE] = "images\\MenuItems\\Delete.jpg";
 	MenuItemImages[ITM_CHNG_DRAW_COLOR] = "images\\MenuItems\\DrawColorIcon.jpg";
 	MenuItemImages[ITM_FILL_COLOR] = "images\\MenuItems\\FillColor.jpg";
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";

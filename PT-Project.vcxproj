@@ -129,6 +129,7 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ActionDelete.cpp" />
     <ClCompile Include="Actions\ActionChangeFillColor.cpp" />
     <ClCompile Include="Actions\ActionChangeDrawColor.cpp" />
     <ClCompile Include="Actions\ActionSelect.cpp" />
@@ -179,6 +180,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ActionDelete.h" />
     <ClInclude Include="Actions\ActionChangeFillColor.h" />
     <ClInclude Include="Actions\ActionChangeDrawColor.h" />
     <ClInclude Include="Actions\ActionSelect.h" />
@@ -214,6 +216,10 @@
     <ClInclude Include="GUI\UI_Info.h" />
     <ClInclude Include="ApplicationManager.h" />
     <ClInclude Include="DEFS.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PT Project.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

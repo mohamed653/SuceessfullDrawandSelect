@@ -23,6 +23,7 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	ITM_ELPS,		//Ellipse item in menu
 	ITM_HEXA,
 	ITM_SELECT,
+	ITM_DELETE,  // delete figure 
 	ITM_CHNG_DRAW_COLOR,		// DR Color item in menu
 	ITM_FILL_COLOR,
 	//TODO: Add more items names here
