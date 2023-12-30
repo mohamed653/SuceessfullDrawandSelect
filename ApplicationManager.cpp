@@ -5,7 +5,7 @@
 #include "Actions/ActionSelect.h"
 #include "Actions\ActionChangeDrawColor.h"
 #include "Actions\ActionChangeFillColor.h"
-#include "ActionDelete.h"
+#include "Actions/ActionDelete.h"
 #include <string.h>
 #include <iostream>
 

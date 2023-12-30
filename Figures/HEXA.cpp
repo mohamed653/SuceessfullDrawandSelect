@@ -13,7 +13,7 @@ HEXA::HEXA(Point P1, Point P2, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 }
 
 
-
+HEXA::HEXA() {};
 void HEXA::DrawMe(GUI* pGUI) const
 {
 	//Call Output::DrawRect to draw a Square on the screen	

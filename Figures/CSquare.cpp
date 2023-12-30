@@ -4,8 +4,10 @@ CSquare::CSquare(Point P1, int len, GfxInfo FigureGfxInfo):CFigure(FigureGfxInfo
 {
 	TopLeftCorner = P1;
 	length = len;
+	ID = newID++;
 }
-	
+
+CSquare::CSquare() {}
 
 void CSquare::DrawMe(GUI* pGUI) const
 {

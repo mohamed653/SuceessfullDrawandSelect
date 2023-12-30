@@ -1,6 +1,7 @@
 #include "ActionDelete.h"
-#include "ApplicationManager.h"
-#include "GUI\GUI.h"
+#include "../ApplicationManager.h"
+
+#include "../GUI/GUI.h"
 
 
 ActionDelete::ActionDelete(ApplicationManager* pApp) :Action(pApp)

@@ -15,6 +15,8 @@ protected:
 	/// Add more parameters if needed.
 
 public:
+
+	CFigure();
 	CFigure(GfxInfo FigureGfxInfo);
 	void SetSelected(bool );	//select/unselect the figure
 	bool IsSelected() const;	//check whether fig is selected
@@ -31,12 +33,14 @@ public:
 	//color StringToColor(string s);
 	//string ColorToString(color c);
 	void CFigure::SetID(int id);
-	virtual void Save(ofstream& OutFile) = 0;	//Save the figure parameters to the file
-	virtual void Load(ifstream& Infile) = 0;	//Load the figure parameters to the file
-	virtual string getShapeType() = 0;  // to get type of the shape
-	virtual CFigure* Clone() = 0;
-	//color getFillColor();
-	virtual void Resize(GUI* pGUI, float size) = 0;
+
+
+	//virtual void Save(ofstream& OutFile) = 0;	//Save the figure parameters to the file
+	//virtual void Load(ifstream& Infile) = 0;	//Load the figure parameters to the file
+	//virtual string getShapeType() = 0;  // to get type of the shape
+	//virtual CFigure* Clone() = 0;
+	////color getFillColor();
+	//virtual void Resize(GUI* pGUI, float size) = 0;
 
 	virtual string GetFigureInfo() = 0;	//print figure info on the status bar
 

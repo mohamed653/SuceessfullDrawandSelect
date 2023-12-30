@@ -1,6 +1,6 @@
 #pragma once
-#include "Actions/Action.h"
-#include "Figures/CFigure.h"
+#include "Action.h"
+#include "../Figures/CFigure.h"
 
 class ActionDelete : public Action {
 	int DeletedID; //ID of the deleted figure (for use in RemoveFig())

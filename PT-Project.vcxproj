@@ -129,7 +129,7 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ActionDelete.cpp" />
+    <ClCompile Include="Actions\ActionDelete.cpp" />
     <ClCompile Include="Actions\ActionChangeFillColor.cpp" />
     <ClCompile Include="Actions\ActionChangeDrawColor.cpp" />
     <ClCompile Include="Actions\ActionSelect.cpp" />
@@ -180,7 +180,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ActionDelete.h" />
+    <ClInclude Include="Actions\ActionDelete.h" />
     <ClInclude Include="Actions\ActionChangeFillColor.h" />
     <ClInclude Include="Actions\ActionChangeDrawColor.h" />
     <ClInclude Include="Actions\ActionSelect.h" />

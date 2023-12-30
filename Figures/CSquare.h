@@ -13,6 +13,7 @@ public:
 	ApplicationManager* pManager = NULL;	//Actions needs AppMngr to do their job
 
 	CSquare(Point , int, GfxInfo FigureGfxInfo );
+	CSquare();
 	virtual void DrawMe(GUI* pOut) const;
 	bool insideFigure(int x, int y);
 	string GetFigureInfo();
