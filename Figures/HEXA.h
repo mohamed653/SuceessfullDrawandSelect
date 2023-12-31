@@ -16,7 +16,7 @@ public:
 	int Area;
 
 	HEXA(Point, Point, GfxInfo FigureGfxInfo); // Constructor
-
+	HEXA();
 	virtual void DrawMe(GUI* pOut) const;
 	bool insideFigure(int x, int y);
 

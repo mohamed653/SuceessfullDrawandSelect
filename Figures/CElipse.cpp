@@ -10,7 +10,7 @@ CElipse::CElipse(Point p1, Point p2, GfxInfo FigureGfxInfo):CFigure(FigureGfxInf
 	ID = newID++;
 }
 
-
+CElipse::CElipse() {}
 	
 
 void CElipse::DrawMe(GUI* pGUI) const

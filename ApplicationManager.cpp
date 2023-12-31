@@ -5,6 +5,7 @@
 #include "Actions/ActionSelect.h"
 #include "Actions\ActionChangeDrawColor.h"
 #include "Actions\ActionChangeFillColor.h"
+#include "Actions/ActionDelete.h"
 #include <string.h>
 #include <iostream>
 ///////
@@ -83,6 +84,9 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		case SELECT:
 			newAct = new ActionSelect(this);
 
+			break;
+		case Delete:
+			newAct = new ActionDelete(this);
 			break;
 
 		case CHNG_DRAW_CLR:
@@ -218,6 +222,61 @@ void ApplicationManager::setselectedfigure(CFigure* pFig)
 CFigure* ApplicationManager::getselectedfigure() const
 {
 	return selectedfigure;
+}
+
+
+// Changing the Array Order to Send back and front
+int ApplicationManager::GetSelectedFigureIndex() {
+	for (int i = FigCount - 1; i >= 0; i--) {
+		if (FigList[i] != NULL) {
+			if (FigList[i]->IsSelected())
+				return i;
+		}
+	}
+	return -1;
+
+}
+
+/*void ApplicationManager::BringToFront(int index) {
+	CFigure* SelectedFigure = FigList[index];
+	for (int i = index; i < FigCount - 1; i++)
+		FigList[i] = FigList[i + 1];
+
+	FigList[FigCount - 1] = SelectedFigure;
+}
+
+void ApplicationManager::SendToBack(int index) {
+	CFigure* SelectedFigure = FigList[index];
+	for (int i = index; i > 0; i--)
+		FigList[i] = FigList[i - 1];
+
+	FigList[0] = SelectedFigure;
+}*/
+
+
+
+//==================================================================================//
+//						Delete Functions		     		                        //
+//==================================================================================//
+
+void ApplicationManager::RemoveFig(int ID) {
+	//Loops on all figures ,starting at the index of the deleted one, shifting them back 1 element and setting their ID
+	for (int i = ID; i < FigCount - 1; i++) {
+		FigList[i] = FigList[i + 1];
+		FigList[i]->SetID(i);
+	}
+	//Reduce FigCount by 1 and nullify the extra pointer (used to point at the deleted figure)
+	FigCount--;
+	FigList[FigCount] = NULL;
+}
+
+// To empty the selected figures array
+void ApplicationManager::ClearSelectedFigs() {
+	for (int i = 0; i < selectedCount; i++)
+	{
+		SelectedFigures[i] = NULL;
+	}
+	selectedCount = 0;
 }
 
 string ApplicationManager::getColorName(color c)

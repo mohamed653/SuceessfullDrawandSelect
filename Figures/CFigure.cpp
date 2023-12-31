@@ -1,6 +1,9 @@
 #include "CFigure.h"
 
-
+CFigure::CFigure()
+{
+	Selected = false;
+}
 CFigure::CFigure(GfxInfo FigureGfxInfo)
 { 
 	FigGfxInfo = FigureGfxInfo;	//Default status is non-filled.
@@ -21,5 +24,16 @@ void CFigure::ChngFillClr(color Fclr)
 {	
 	FigGfxInfo.isFilled = true;
 	FigGfxInfo.FillClr = Fclr; 
+}
+void CFigure::SetID(int id)
+{
+	ID = id;
+}
+
+//Gets the figure ID
+
+int CFigure::GetID() const
+{
+	return ID;
 }
 
