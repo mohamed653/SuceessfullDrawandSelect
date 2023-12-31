@@ -25,6 +25,8 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	ITM_SELECT,
 	ITM_CHNG_DRAW_COLOR,		// DR Color item in menu
 	ITM_FILL_COLOR,
+	ITM_RESIZE,
+
 	//TODO: Add more items names here
 
 	ITM_EXIT,		//Exit item
@@ -59,7 +61,17 @@ enum ColorMenuItem //The items of the Color menu (you should add more items)
 
 };
 
+enum SizeMenuItem // The items of colors
+{
+	ITM_QUARTER,
+	ITM_HALF,
+	ITM_DOUBLE,
+	ITM_QUADRUPLE,
 
+	ITM_BACK2,
+
+	SIZE_ITM_COUNT
+};
 
 
 

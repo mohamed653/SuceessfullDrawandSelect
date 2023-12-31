@@ -7,6 +7,13 @@
 #include "Actions\ActionChangeFillColor.h"
 #include <string.h>
 #include <iostream>
+///////
+#include "ActionResize.h"
+#include "Figures\CFigure.h"
+#include "ActionSwitchToDrawMode.h"
+
+
+
 
 //Constructor
 ApplicationManager::ApplicationManager()
@@ -84,6 +91,12 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 
 		case CHNG_FILL_CLR:
 			newAct = new ActionChangeFillColor(this);
+			break;
+		case RESIZE:
+			newAct = new ActionResize(this, selectedfigure);
+			break;
+		case GO_BACK:
+			newAct = new ActionSwitchToDrawMode(this);
 			break;
 
 		case EXIT:
@@ -323,4 +336,28 @@ void ApplicationManager::changeFillColor(color FillClr)
 			FigList[i]->ChngFillClr(FillClr);
 		}
 	}
+}
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//                                 Resize Functions							//
+//////////////////////////////////////////////////////////////////////////////
+
+
+int ApplicationManager::getSelectedFigure()
+{
+
+	for (int i = 0; i < FigCount; i++)
+		if (FigList[i]->IsSelected())
+			return i;
+	return -1;
+}
+CFigure* ApplicationManager::GetSelectedFigure() const
+{
+	//check if a figure selected
+	for (int i = (FigCount - 1); i >= 0; i--) {
+		if (FigList[i]->IsSelected()) return FigList[i];
+	}
+	return NULL;
 }

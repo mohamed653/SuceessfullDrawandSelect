@@ -15,7 +15,12 @@ public:
 	CSquare(Point , int, GfxInfo FigureGfxInfo );
 	virtual void DrawMe(GUI* pOut) const;
 	bool insideFigure(int x, int y);
+
+	////
+	virtual void Resize(GUI* pGUI, float size);
+
 	string GetFigureInfo();
+
 };
 
 #endif

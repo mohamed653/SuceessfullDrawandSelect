@@ -26,6 +26,18 @@ enum ActionType //The actions supported (you can add more if needed)
 	STATUS,			//A click on the status bar
 	EMPTY,			//A click on empty place in the toolbar
 
+
+	TO_SIZE,
+	HALF,
+	QUARTER,
+	DOUBLE1,
+	QUADRUPLE,
+	BACK2,
+	GO_BACK,
+
+
+
+
 	SET_RED,		//pick red color
 	SET_GREEN,		//pick green color
 	SET_BLUE,		//pick blue color

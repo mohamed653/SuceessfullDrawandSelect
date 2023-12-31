@@ -19,6 +19,9 @@ public:
 
 	virtual void DrawMe(GUI* pOut) const;
 	bool insideFigure(int x, int y);
+
+	virtual void Resize(GUI* pGUI, float size);
+
 	string GetFigureInfo();
 
 };

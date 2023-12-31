@@ -47,6 +47,36 @@ bool HEXA::insideFigure(int x, int y)
 	else
 		return false;
 }
+
+
+/////
+void HEXA::Resize(GUI* pGUI, float size) {
+
+	float length_test = HorizentalLen * size;
+	float height_test = VerticalLen * size;
+	if ((TopLeftCorner.y + height_test) > UI.height - UI.StatusBarHeight
+		|| (TopLeftCorner.x + length_test * 1.5) > UI.width
+		|| (TopLeftCorner.x - length_test * 0.5) < 1)
+	{
+		pGUI->PrintMessage("Hexagon size will be more than Drawing Area");
+		Sleep(1000);
+	}
+	else if (length_test < 20 || height_test < 20)
+	{
+		pGUI->PrintMessage("Hexagon size will be very small");
+		Sleep(1000);
+	}
+	else
+	{
+		HorizentalLen = length_test;
+		VerticalLen = height_test;
+		BottomRightCorner.x = TopLeftCorner.x + HorizentalLen;
+		BottomRightCorner.y = TopLeftCorner.y + VerticalLen;
+	}
+
+}
+
+
 //Figure Info Function
 string HEXA::GetFigureInfo()
 {

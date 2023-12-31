@@ -26,6 +26,9 @@ public:
 
 	virtual bool insideFigure(int, int) = 0; // select
 
+
+	virtual void Resize(GUI* pGUI, float size) = 0;
+
 	virtual string GetFigureInfo() = 0;	//print figure info on the status bar
 
 	///The following functions should be supported by the figure class

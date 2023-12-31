@@ -1,4 +1,7 @@
 #include "CElipse.h"
+#include <fstream>
+#include <iostream>
+
 
 CElipse::CElipse(Point p1, Point p2, GfxInfo FigureGfxInfo):CFigure(FigureGfxInfo)
 {
@@ -36,6 +39,44 @@ bool CElipse::insideFigure(int x, int y)
 			return true;
 		}
 		return false;  */
+}
+
+
+/////
+void CElipse::Resize(GUI* pGUI, float size) {
+	Point test1 = P1, test2 = P2;
+	if (size == .5) size = -0.5;
+	else if (size == .25) size = -(4.0 / 3);
+	else if (size == 2) size = 1;
+	else size = 3;
+
+	// half radius (horizontal x && vertical y)
+	float deltaX, deltaY;
+	deltaX = 0.5 * (P2.x - P1.x);
+	deltaY = 0.5 * (P2.y - P1.y);
+
+
+
+	test1.x -= deltaX * size;
+	test2.x += deltaX * size;
+	test1.y -= deltaY * size;
+	test2.y += deltaY * size;
+
+	if (test1.y < UI.ToolBarHeight || test2.y > UI.height - UI.StatusBarHeight
+		|| test2.x > UI.width || test1.x < 1)
+	{
+		pGUI->PrintMessage("Ellips size will be more than Drawing Area");
+		Sleep(1000);
+	}
+	else if (((test2.x - test1.x) / 2) < 15 || ((test2.y - test1.y) / 2) < 10)
+	{
+		pGUI->PrintMessage("Ellips size will be very small");
+		Sleep(1000);
+	}
+
+	P1 = test1;
+	P2 = test2;
+
 }
 
 

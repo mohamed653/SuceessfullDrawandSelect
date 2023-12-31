@@ -142,13 +142,33 @@
     <ClCompile Include="Actions\ActionAddSquare.cpp">
       <Filter>Action Classes</Filter>
     </ClCompile>
-    <ClCompile Include="Actions\ActionAddElipse.cpp" />
-    <ClCompile Include="Figures\CElipse.cpp" />
-    <ClCompile Include="Figures\HEXA.cpp" />
-    <ClCompile Include="Actions\ActionAddHexa.cpp" />
-    <ClCompile Include="Actions\ActionSelect.cpp" />
-    <ClCompile Include="Actions\ActionChangeDrawColor.cpp" />
-    <ClCompile Include="Actions\ActionChangeFillColor.cpp" />
+    <ClCompile Include="Actions\ActionAddElipse.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\ActionAddHexa.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\ActionChangeDrawColor.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\ActionChangeFillColor.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionResize.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\ActionSelect.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionSwitchToDrawMode.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Figures\CElipse.cpp">
+      <Filter>Figures Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Figures\HEXA.cpp">
+      <Filter>Figures Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -233,12 +253,32 @@
     <ClInclude Include="Actions\ActionAddSquare.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Actions\ActionAddElipse.h" />
-    <ClInclude Include="Figures\CElipse.h" />
-    <ClInclude Include="Figures\HEXA.h" />
-    <ClInclude Include="Actions\ActionAddHexa.h" />
-    <ClInclude Include="Actions\ActionSelect.h" />
-    <ClInclude Include="Actions\ActionChangeDrawColor.h" />
-    <ClInclude Include="Actions\ActionChangeFillColor.h" />
+    <ClInclude Include="Actions\ActionAddElipse.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\ActionAddHexa.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\ActionChangeDrawColor.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\ActionChangeFillColor.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionResize.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\ActionSelect.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionSwitchToDrawMode.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Figures\CElipse.h">
+      <Filter>Figures Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Figures\HEXA.h">
+      <Filter>Figures Classes</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

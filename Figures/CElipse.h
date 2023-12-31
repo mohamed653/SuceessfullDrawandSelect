@@ -11,8 +11,12 @@ private:
 public:
 	ApplicationManager* pManager = NULL;	//Actions needs AppMngr to do their job
 	CElipse(Point , Point, GfxInfo FigureGfxInfo );
+
 	virtual void DrawMe(GUI* pOut) const;
 	bool insideFigure(int x, int y);
+
+	virtual void Resize(GUI* pGUI, float size);
+
 	string GetFigureInfo();
 };
 
