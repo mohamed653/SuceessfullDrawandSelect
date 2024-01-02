@@ -300,7 +300,8 @@ void GUI::ClearDrawArea() const
 {
 	pWind->SetPen(UI.BkGrndColor, 1);
 	pWind->SetBrush(UI.BkGrndColor);
-	pWind->DrawRectangle(0, UI.ToolBarHeight, UI.width, UI.height - UI.StatusBarHeight);	
+	pWind->DrawRectangle(0, UI.ToolBarHeight, UI.width, UI.height - UI.StatusBarHeight);
+	//CreateColorBar();
 	
 }
 //////////////////////////////////////////////////////////////////////////////////////////

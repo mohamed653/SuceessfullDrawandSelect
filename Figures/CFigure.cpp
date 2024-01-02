@@ -37,3 +37,9 @@ int CFigure::GetID() const
 	return ID;
 }
 
+//Gives Current Status
+bool CFigure::HiddenStatus() const
+{
+	return PlayHidden;
+}
+

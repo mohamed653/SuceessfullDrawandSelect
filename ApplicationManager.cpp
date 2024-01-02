@@ -162,9 +162,27 @@ CFigure *ApplicationManager::GetFigure(int x, int y) const
 
 //Draw all figures on the user interface
 void ApplicationManager::UpdateInterface() const
-{	
-	for(int i=0; i<FigCount; i++)
-		FigList[i]->DrawMe(pGUI);		//Call Draw function (virtual member fn)
+{
+	pGUI->CreateColorBar();
+	pGUI->ClearDrawArea();
+	for (int i = 0; i < FigCount; i++) {
+		if (FigList[i]->HiddenStatus() == false)
+			FigList[i]->DrawMe(pGUI);		//Call Draw function (virtual member fn)
+
+	}
+
+	GetGUI();
+	if (UI.InterfaceMode == MODE_DRAW) {
+
+		pGUI->CreateDrawToolBar();
+		//	pGUI->CreateStatusBar();
+		pGUI->CreateColorBar();
+	}
+	else {
+		//pGUI->CreatePlayToolBar();
+		//pGUI->CreateStatusBar();
+		pGUI->CreateColorBar();
+	}
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Return a pointer to the interface

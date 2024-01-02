@@ -11,7 +11,7 @@ protected:
 	int ID;		//Each figure has an ID
 	bool Selected;	//true if the figure is selected.
 	GfxInfo FigGfxInfo;	//Figure graphis info
-	
+	bool PlayHidden;
 	/// Add more parameters if needed.
 
 public:
@@ -34,7 +34,7 @@ public:
 	//string ColorToString(color c);
 	void CFigure::SetID(int id);
 
-
+	bool HiddenStatus() const;
 	//virtual void Save(ofstream& OutFile) = 0;	//Save the figure parameters to the file
 	//virtual void Load(ifstream& Infile) = 0;	//Load the figure parameters to the file
 	//virtual string getShapeType() = 0;  // to get type of the shape
